@@ -9,9 +9,16 @@ app.use(express.json());
 app.use(cors());
 
 //Iniciando o BD
-mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser:true });
+mongoose.connect(
+  "mongodb://plansolucao01:Senha123@mongo71-farm68.kinghost.net/plansolucao01",
+  {
+    useNewUrlParser: true
+  }
+);
 requireDir('./src/models/');
 
 app.use('/api', require("./src/routes"));
 const porta = process.env.PORT || 8080;
 app.listen(porta);
+
+
